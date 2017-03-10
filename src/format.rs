@@ -7,17 +7,17 @@ fn level_token(level: &LogLevel) -> &str
 {
     match *level
     {
-        LogLevel::Error => "E",
-        LogLevel::Warn  => "W",
-        LogLevel::Info  => "*",
-        LogLevel::Debug => "D",
-        LogLevel::Trace => "T",
+        LogLevel::Error => "ERROR",
+        LogLevel::Warn  => "WARNING",
+        LogLevel::Info  => "INFO",
+        LogLevel::Debug => "DEBUG",
+        LogLevel::Trace => "TRACE",
     }
 }
 
 fn prefix_token(level: &LogLevel) -> String
 {
-    format!("{}{}{}", "[".blue().bold(), color::level_color(level, level_token(level)), "]".blue().bold())
+    format!("[{}]", color::level_color(level, level_token(level)))
 }
 
 pub fn format(record: &LogRecord) -> String

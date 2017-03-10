@@ -9,8 +9,8 @@ pub fn level_color(level: &log::LogLevel, msg: &str) -> String
     {
         &LogLevel::Error => msg.red(),
         &LogLevel::Warn  => msg.yellow(),
-        &LogLevel::Info  => msg.green(),
-        &LogLevel::Debug => msg.green(),
+        &LogLevel::Info  => msg.blue(),
+        &LogLevel::Debug => msg.white(),
         &LogLevel::Trace => msg.magenta(),
     }.bold().to_string()
 }
