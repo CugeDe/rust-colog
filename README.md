@@ -24,6 +24,11 @@ fn main()
     info!("more\nmulti\nline\nhere\nhere");
 }
 ```
+
+This results in the following terminal output:
+
+![terminal example](screenshot.png "Terminal output for example")
+
 ## Known issues and improvements ##
 
 The color and terminal handling could use a serious improvement, via
