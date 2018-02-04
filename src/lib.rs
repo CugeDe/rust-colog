@@ -2,20 +2,20 @@ extern crate log;
 extern crate colored;
 extern crate env_logger;
 
-use std::env;
 #[allow(unused_imports)]
-use log::LogLevelFilter;
-use env_logger::LogBuilder;
+use env_logger::Builder;
+use log::LevelFilter;
+use std::env;
 
 mod format;
 mod color;
 
 #[allow(dead_code)]
-pub fn builder() -> LogBuilder
+pub fn builder() -> Builder
 {
-    let mut builder = LogBuilder::new();
+    let mut builder = Builder::new();
     builder.format(format::format);
-    builder.filter(None, LogLevelFilter::Info);
+    builder.filter(None, LevelFilter::Info);
     if env::var("RUST_LOG").is_ok() {
         builder.parse(&env::var("RUST_LOG").unwrap());
     }
